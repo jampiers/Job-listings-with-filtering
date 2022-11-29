@@ -1,0 +1,88 @@
+@use 'variables' as v; 
+@use 'mixins' as m; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: v.$font;
+    font-size: 1.5rem;
+    color: v.$darkGrayishCyan;
+    background-color: v.$lightGrayishCyanBg;
+}
+
+p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.contenedor {
+    padding: 0 2.4rem;
+    max-width: 1110px;
+    margin: 0 auto;
+    
+    @include m.tablet { 
+        padding: 0 3.2rem;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 0;
+    }
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h2, h3 {
+    margin: 0;
+    font-family: v.$font;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: v.$veryDarkGrayishCyan;
+    margin-bottom: .5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: v.$desaturatedDarkCyan;
+}
+
+
+button {
+    color: v.$desaturatedDarkCyan;
+    background-color: v.$lightGrayishCyanBg;
+    padding: .7rem 1rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: .7rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.tag {
+        transition: all .3s;
+
+        &:hover {
+            background-color: v.$desaturatedDarkCyan;
+            color: v.$white;
+        }
+    }
+}

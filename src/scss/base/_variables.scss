@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+// Fuentes
+$font: 'League Spartan', sans-serif;
+
+// Tamaño de Media Queries
+$telefono: 480px;
+$tablet: 768px;
+$tablet-xl: 992px;
+
+// Colores
+$lightGrayishCyanBg: hsl(180, 52%, 96%); // backgrdound
+$lightGrayishCyanFt: hsl(180, 31%, 95%); // filter tablets
+$darkGrayishCyan: hsl(180, 8%, 52%);
+$veryDarkGrayishCyan: hsl(180, 14%, 20%);
+$desaturatedDarkCyan: hsl(180, 29%, 50%);
+$white: #fff;
+$black: #000;

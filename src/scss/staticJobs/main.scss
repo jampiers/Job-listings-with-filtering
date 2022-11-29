@@ -1,0 +1,181 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.trabajos {
+
+    .hero {
+        background-image: url(../img/bg-header-mobile.svg);
+        background-color: v.$desaturatedDarkCyan;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 15rem;
+
+        @include m.tablet-xl { 
+            background-image: url(../img/bg-header-desktop.svg);
+            height: 15.6rem;
+        }
+    }
+
+
+    &-grid {
+        margin: 7rem 0;
+        @include m.grid(1, 2rem);
+        max-width: 44rem;
+        margin-inline: auto;
+
+        @include m.tablet { 
+            max-width: initial;
+        }
+    }
+
+    .filtros {
+        background-color: v.$white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        transform: translateY(-50%);
+        border-radius: .7rem;
+        box-shadow: 0px 13px 22px -7px lighten(rgba(91,164,164,1), 28%);
+        display: none;
+
+        &.mostrar {
+            display: flex;
+        }
+
+        .tags-contenedor {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 3rem;
+
+            @include m.tablet { 
+                grid-template-columns: repeat(7, auto);
+            }
+        }
+
+        .tag-filtro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: v.$lightGrayishCyanBg;
+            border-radius: 1rem;
+
+            p {
+                color: v.$desaturatedDarkCyan;
+                padding: .7rem 1rem;
+                font-weight: bold;
+            }
+
+            .btn-eliminar {
+                height: 100%;
+                background-color: v.$desaturatedDarkCyan;
+                background-image: url(../img/icon-remove.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 3rem;
+                border-radius: 0%;
+                transition: all .3s;
+                border-radius: 0 1rem 1rem 0;
+
+                &:hover {
+                    background-color: v.$veryDarkGrayishCyan;
+                }
+            }
+        }
+
+        .eliminar-filtros {
+            background: none;
+            color: v.$darkGrayishCyan;
+            transition: all .3s;
+
+            &:hover {
+                color: v.$desaturatedDarkCyan;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.trabajo {
+    background-color: v.$white;
+    padding: 0rem 2rem 2rem;
+    border-radius: .7rem;
+    box-shadow: 0px 8px 18px -7px lighten(rgba(91,164,164,1), 28%);
+
+    @include m.tablet { 
+        padding: 2.5rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &.new-featured {
+        border-left: .5rem solid v.$desaturatedDarkCyan;
+    }
+
+
+
+    &-header {
+        @include m.tablet {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+    }
+
+    &-imagen {
+        width: 8rem;
+        height: auto;
+        transform: translateY(-3.25rem);
+
+        @include m.tablet { 
+            width: 9.2rem;
+            transform: translateY(0);
+        }
+    }
+
+    &-info {
+        padding-bottom: 1.5rem;
+
+        @include m.tablet { 
+            padding: 0;
+        }
+    }
+
+    &-new,
+    &-featured {
+        color: v.$white;
+        padding: 1rem;
+        background-color: v.$desaturatedDarkCyan;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin: 0 1rem 0 2rem;
+    }
+
+    &-featured {
+        background-color: v.$veryDarkGrayishCyan;
+        margin: 0;
+    }
+
+    &-tags {
+        padding-top: 1.5rem;
+        border-top: 1px solid v.$darkGrayishCyan;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 1.5rem;
+
+        @include m.tablet { 
+            border: none;
+            grid-template-columns: repeat(2, auto);
+        }
+
+        @include m.tablet-xl { 
+            padding: 0;
+            display: flex;
+            align-items: center;
+            border: none;
+        }
+    }
+}
